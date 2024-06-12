@@ -1,6 +1,4 @@
 <script setup>
-import { ref, inject } from "vue";
-
 const links = [
 	{
 		title: "Home",
