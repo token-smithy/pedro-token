@@ -67,8 +67,6 @@ header
             display: flex
             align-items: center
             padding: 0 20px
-            // @media (min-width: 1200px)
-            //     padding: 40px 80px
             .main-menu-links
                 margin-right: 48px
                 display: flex
