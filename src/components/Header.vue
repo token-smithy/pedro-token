@@ -62,9 +62,9 @@ const links = [
 					>
 						{{ link.title }}
 					</div>
-                    <buy-button class="mobile-menu-link"></buy-button>
-
-               </div>
+                    
+                </div>
+                <buy-button></buy-button>
             </div>
         </div>
     </transition>
@@ -138,14 +138,15 @@ header
     .mobile-menu-inner
         text-align: right
         .mobile-menu-links
-            display: flex
-            flex-direction: column
+            text-align: center
             .mobile-menu-link
                 padding: 12px
                 font-size: 20px
                 align-self: center
                 &:hover, &:focus, &:active
                     background-color: darken(white, 10%)
+        .token-button--buy
+            text-align: center
 
         .close-button
             height: 30px

@@ -14,7 +14,7 @@
 <style lang="sass">
 a
     &.token-button--buy
-        display: inline-block
+        display: block
         button
             color: white
             background-color: #f5bd03
