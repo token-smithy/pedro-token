@@ -33,6 +33,7 @@ const words = [
 function menuItemClicked(payLoad) {
 	instance.refs[payLoad].scrollIntoView({ behavior: "smooth" });
 }
+
 </script>
 
 <template>

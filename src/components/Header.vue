@@ -118,6 +118,7 @@ header
         display: none
 
 .mobile-menu
+    touch-action: none
     position: fixed
     height: 100vh
     top: 0
@@ -157,6 +158,7 @@ header
 
 .background
     &.menu-open
+        touch-action: none
         background: black
         height: 100vh
         width: 100%
