@@ -1,4 +1,11 @@
 <script setup>
+import {ref, inject} from "vue"
+import BuyButton from "@/components/atomaric/BuyButton.vue"
+import IconHamburger from "./icons/IconHamburger.vue";
+import IconClose from "./icons/IconClose.vue";
+
+const menuOpen = inject('menuOpen')
+
 const links = [
 	{
 		title: "Home",
@@ -16,7 +23,9 @@ const links = [
 </script>
 
 <template>
-	<header>
+	<div class="background"  @click="menuOpen =false" :class="{'menu-open': menuOpen}">
+    </div>
+        <header>
 		<div class="navbar">
 			<div class="navbar-left">
 				<div class="navbar-icon">
@@ -34,10 +43,29 @@ const links = [
 					>
 						{{ link.title }}
 					</div>
+                    <buy-button class="main-menu-link"></buy-button>
+                    <icon-hamburger class="hamburger-button" @click="menuOpen = true"></icon-hamburger>
 				</div>
 			</div>
 		</div>
 	</header>
+    <transition name="mobile-nav">
+        <div class="mobile-menu" v-show="menuOpen">
+            <div class="mobile-menu-inner">
+                <icon-close class="close-button" @click="menuOpen = false"></icon-close>
+               <div class="mobile-menu-links">
+                <div
+						class="mobile-menu-link"
+						v-for="link in links"
+						:key="link.name"
+						@click="$emit('link-clicked', link.name);menuOpen=false"
+					>
+						{{ link.title }}
+					</div>
+               </div>
+            </div>
+        </div>
+    </transition>
 </template>
 
 <style lang="sass" scoped>
@@ -56,7 +84,9 @@ header
             align-items: center
             gap: 24px
             .navbar-title
-                font-size: 48px
+                font-size: 32px
+                @media (min-width: 768px)
+                    font-size: 48px
             .navbar-icon
                 img
                     height: 60px
@@ -68,11 +98,65 @@ header
             align-items: center
             padding: 0 20px
             .main-menu-links
-                margin-right: 48px
                 display: flex
                 gap: 48px
+                align-items: center
                 &:hover, &:active, &:focus
                     color: lighten(black, 20%)
                 .main-menu-link
+                    display: none
                     cursor: pointer
+                    @media (min-width: 768px)
+                        display: block
+
+.hamburger-button
+    color: black
+    height: 30px
+    @media (min-width: 768px)
+        display: none
+
+.mobile-menu
+    position: fixed
+    height: 100vh
+    top: 0
+    right: 0
+    padding: 15px 20px
+    background-color: white
+    width: 70%
+    z-index: 100
+    transform: translateX(0)
+    &.mobile-nav-enter-active,
+    &.mobile-nav-leave-active
+        transition: .15s ease all
+    &.moblie-nav-enter-from,
+    &.mobile-nav-leave-to
+        transform: translateX(100%)
+    &.mobile-nav-enter-from
+        transform: translateX(100%)
+    .mobile-menu-inner
+        text-align: right
+        .mobile-menu-links
+            .mobile-menu-link
+                padding: 12px
+                font-size: 20px
+                text-align: center
+                &:hover, &:focus, &:active
+                    background-color: darken(white, 10%)
+
+        .close-button
+            height: 30px
+            align-self: end
+
+
+
+.background
+    &.menu-open
+        background: black
+        height: 100vh
+        width: 100%
+        z-index: 5
+        position: fixed
+        opacity: 0.5
+        overflow: hidden
+        
 </style>

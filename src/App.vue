@@ -1,5 +1,5 @@
 <script setup>
-import { ref, getCurrentInstance } from "vue";
+import { ref, getCurrentInstance, provide } from "vue";
 import VueHeader from "./components/Header.vue";
 import VueFooter from "./components/Footer.vue";
 import Tokenomics from "./components/Tokenomics.vue";
@@ -11,6 +11,8 @@ const home = ref();
 const about = ref();
 const tokenomics = ref();
 const instance = getCurrentInstance();
+const menuOpen = ref(false)
+provide('menuOpen', menuOpen)
 
 const words = [
 	"$PEDRO",
@@ -36,7 +38,7 @@ function menuItemClicked(payLoad) {
 <template>
 	<div ref="home"></div>
 	<vue-header @link-clicked="menuItemClicked"></vue-header>
-	<main>
+	<main :class="{'menuOpen': menuOpen}" >
 		<section id="home">
 			<headline></headline>
 			<Vue3Marquee>
@@ -61,13 +63,20 @@ function menuItemClicked(payLoad) {
 .token-headline
     height: calc(100vh - 66px - 38.5px)
 .vue3-marquee
-    background-color: white
+    background-color: black
+    color: #f5bd03
     padding: 12px 0
     overflow: hidden
     .marquee
         justify-content: space-around
+        gap: 12px
+        @media (min-width: 768px)
+            gap: 0
 
 main
+    &.menuOpen
+        touch-action: none
+
     .container
         gap: 48px
         display: flex

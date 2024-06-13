@@ -8,10 +8,11 @@
 				<social-item size="small" title="Discord" icon="discord"></social-item>
 				<social-item size="small" title="Dexscreener" icon="dex"></social-item>
 				<social-item size="small" title="Uniswap" icon="uniswap"></social-item>
+				<social-item size="small" title="Uniswap" text="BUY" bg-color="#f5bd03"></social-item>
 			</div>
 		</div>
 		<div class="token-headline_right">
-			<img src="@/assets/img/pedro-racoon.gif" alt="" />
+			<img src="@/assets/img/giphy.webp" alt="" />
 		</div>
 	</div>
 </template>
@@ -24,7 +25,10 @@ import SocialItem from "./atomaric/SocialItem.vue";
 .token-headline
     background-color: black
     display: flex
+    flex-direction: column
     color: white
+    @media (min-width: 768px)
+        flex-direction: row
     .token-headline_left, .token-headline_right
         flex: 1 1 auto
         display: flex

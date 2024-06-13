@@ -11,9 +11,18 @@
 					<p>todo</p>
 				</card>
 				<card class="tokenomics-card">
-					<h3>TOKEN ADDRESS</h3>
+                    <h3>TOKEN ADDRESS</h3>
 					<p>todo</p>
 				</card>
+                <card class="tokenomics-card">
+                    <h3>Total Burned</h3>
+                    <p>todo</p>
+                </card>
+                <card class="tokenomics-card">
+                    <h3>Distribution</h3>
+                        <p class="smaller-font">97% tokens are in a pool available for trading</p>
+                        <p class="smaller-font">3% tokens are in a team multisig for marketing campaign</p>
+                </card>
 			</div>
 		</div>
 	</div>
@@ -27,10 +36,18 @@ import Card from "@/components/atomaric/Card.vue";
 .tokenomics-wrapper
     .tokenomics-inner
         display: flex
+        flex-direction: column
         gap: 20px
+        @media (min-width: 768px)
+            flex-direction: row
         .tokenomics-left
+            display: flex
+            flex-direction: column
+            justify-content: center
             img
-                width: 300px
+                width: 250px
+                @media (min-width: 768px)
+                    width: 350px
         .tokenomics-right
             display: flex
             flex-direction: column
@@ -52,4 +69,7 @@ import Card from "@/components/atomaric/Card.vue";
                     font-style: normal
                     font-weight: 500
                     text-transform: capitalize
+                    &.smaller-font
+                        font-size: 20px
+                    
 </style>

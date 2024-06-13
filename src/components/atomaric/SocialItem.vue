@@ -55,12 +55,14 @@ a
     text-decoration: none
     .social-item
         border-radius: 12px
-        border: 1px solid lightgrey
+        border: 1px solid black
         background-color: white
         display: flex
         justify-content: center
         align-items: center
-        font-size: 25px
+        font-size: 14px
+        @media (min-width: 768px)
+            font-size: 25px
         &:hover, &:active, &:focus
             background-color: darken(white, 10%)
             cursor: pointer
