@@ -146,6 +146,7 @@ header
                 &:hover, &:focus, &:active
                     background-color: darken(white, 10%)
         .token-button--buy
+            margin-top: 15px
             text-align: center
 
         .close-button
