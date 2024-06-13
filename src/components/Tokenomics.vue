@@ -44,6 +44,7 @@ import Card from "@/components/atomaric/Card.vue";
             display: flex
             flex-direction: column
             justify-content: center
+            align-items: center
             img
                 width: 250px
                 @media (min-width: 768px)
