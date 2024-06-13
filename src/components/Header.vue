@@ -31,7 +31,7 @@ const links = [
 				<div class="navbar-icon">
 					<img alt="Logo Token" class="logo" src="@/assets/img/logo.png" />
 				</div>
-				<div class="navbar-title">$PEDRO</div>
+				<div class="navbar-title">PEDRO</div>
 			</div>
 			<div class="navbar-inner">
 				<div class="main-menu-links">
