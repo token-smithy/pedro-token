@@ -20,8 +20,10 @@
                 </card>
                 <card class="tokenomics-card">
                     <h3>Distribution</h3>
-                        <p class="smaller-font">97% tokens are in a pool available for trading</p>
-                        <p class="smaller-font">3% tokens are in a team multisig for marketing campaign</p>
+                       <div class="distribution-body">
+                            <p class="smaller-font">97% tokens are in a pool available for trading</p>
+                            <p class="smaller-font">3% tokens are in a team multisig for marketing campaign</p>
+                       </div>
                 </card>
 			</div>
 		</div>
@@ -72,5 +74,11 @@ import Card from "@/components/atomaric/Card.vue";
                     text-transform: capitalize
                     &.smaller-font
                         font-size: 20px
+
+.distribution-body
+    display: flex
+    flex-direction: column
+    gap: 12px
+    text-align: center
                     
 </style>
