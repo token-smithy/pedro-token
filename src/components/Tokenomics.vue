@@ -8,15 +8,15 @@
 			<div class="tokenomics-right">
 				<card class="tokenomics-card">
 					<h3>TOTAL SUPPLY</h3>
-					<p>todo</p>
+					<p>{{supply}}</p>
 				</card>
 				<card class="tokenomics-card">
                     <h3>TOKEN ADDRESS</h3>
-					<p>todo</p>
+					<p>{{address}}</p>
 				</card>
                 <card class="tokenomics-card">
                     <h3>Total Burned</h3>
-                    <p>todo</p>
+                    <p>{{totalBurned}}</p>
                 </card>
                 <card class="tokenomics-card">
                     <h3>Distribution</h3>
@@ -32,6 +32,10 @@
 
 <script setup>
 import Card from "@/components/atomaric/Card.vue";
+
+const totalBurned = import.meta.env.VITE_BURNED;
+const address = import.meta.env.VITE_ADDRESS;
+const supply = import.meta.env.VITE_SUPPLY;
 </script>
 
 <style lang="sass">
