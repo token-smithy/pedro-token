@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
 	<a :href="props.href" target="_blank">
+=======
+	<a href="https://t.me/pedrotheraccoontoken" target="_blank">
+>>>>>>> ff0a2a9ca00b9f02a34d5681c0812b4585a9038c
 		<button
 			class="social-item"
 			:title="props.title"

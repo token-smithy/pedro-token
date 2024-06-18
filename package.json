@@ -2,6 +2,7 @@
     "name": "vue-meme-token",
     "version": "0.0.0",
     "private": true,
+    "homepage": "pedro-on-base.xyz",
     "type": "module",
     "scripts": {
         "dev": "vite",
