@@ -3,12 +3,11 @@
 		<div class="token-headline_left">
 			<h1>PEDRO THE RACCOON</h1>
 			<div class="social-wrapper">
-				<social-item size="small" title="Telegram" icon="telegram"></social-item>
-				<social-item size="small" title="x/Twitter" icon="x"></social-item>
-				<social-item size="small" title="Discord" icon="discord"></social-item>
-				<social-item size="small" title="Dexscreener" icon="dex"></social-item>
-				<social-item size="small" title="Uniswap" icon="uniswap"></social-item>
-				<social-item size="small" title="Uniswap" text="BUY" bg-color="#f5bd03"></social-item>
+				<social-item size="small" title="Telegram" :href="telegram" icon="telegram"></social-item>
+				<social-item size="small" title="x/Twitter" :href="twitter" icon="x"></social-item>
+				<social-item size="small" :href="discord" title="Discord" icon="discord"></social-item>
+				<social-item size="small" title="Dexscreener" :href="descreener" icon="dex"></social-item>
+				<social-item size="small" title="Uniswap" :href="uniswap" icon="uniswap"></social-item>
 			</div>
 		</div>
 		<div class="token-headline_right">
@@ -19,6 +18,12 @@
 
 <script setup>
 import SocialItem from "./atomaric/SocialItem.vue";
+
+const telegram = import.meta.env.VITE_TELEGRAM;
+const twitter = import.meta.env.VITE_TWITTER;
+const discord = import.meta.env.VITE_DISCORD;
+const uniswap = import.meta.env.VITE_UNISWAP;
+const descreener = import.meta.env.VITE_DESCREENER;
 </script>
 
 <style lang="sass">

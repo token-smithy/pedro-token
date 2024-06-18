@@ -1,5 +1,5 @@
 <template>
-	<a href="https://t.me/+w0NfKNaz-Z8zMmZk" target="_blank">
+	<a :href="props.href" target="_blank">
 		<button
 			class="social-item"
 			:title="props.title"

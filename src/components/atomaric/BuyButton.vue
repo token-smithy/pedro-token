@@ -1,14 +1,11 @@
 <template>
-    <a href="" target="_blank" class="token-button--buy">
-        <button  >
-        BUY
-        </button>
-    </a>
+	<a :href="uniswap" target="_blank" class="token-button--buy">
+		<button>BUY</button>
+	</a>
 </template>
 
-
 <script setup>
-
+const uniswap = import.meta.env.VITE_UNISWAP;
 </script>
 
 <style lang="sass">
@@ -26,4 +23,3 @@ a
                 background-color: lighten(#f5bd03, 20%)
                 cursor: pointer
 </style>
-
